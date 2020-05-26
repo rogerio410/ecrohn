@@ -9,11 +9,26 @@ class HomeRoute extends StatelessWidget {
       title: Text(
         'e-Crohn',
         style: TextStyle(
-          fontSize: 24.0,
-          color: Colors.blue[50],
+          fontSize: 26.0,
+          color: Colors.white,
+          fontFamily: 'Helvetica Hune',
         ),
         textAlign: TextAlign.left,
       ),
+      actions: <Widget>[
+        IconButton(
+          padding: EdgeInsets.only(
+            right: 12,
+          ),
+          icon: Icon(
+            Icons.info_outline,
+            size: 28,
+          ),
+          onPressed: () {
+            Navigator.pushNamed(context, '/about');
+          },
+        )
+      ],
       bottom: TabBar(
         // unselectedLabelColor: Colors.white,
         // labelColor: Colors.cyanAccent,
@@ -61,7 +76,7 @@ class Choice {
 }
 
 const List<Choice> choices = const <Choice>[
-  const Choice(title: 'Info', icon: Icons.info_outline),
+  const Choice(title: 'Presentation', icon: Icons.book),
   const Choice(title: 'Red Flags', icon: Icons.flag),
-  const Choice(title: 'Score', icon: Icons.find_in_page),
+  const Choice(title: 'Evaluation', icon: Icons.find_in_page),
 ];

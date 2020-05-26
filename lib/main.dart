@@ -1,3 +1,4 @@
+import 'package:ecronh/routes/about.dart';
 import 'package:flutter/material.dart';
 import 'package:ecronh/routes/home.dart';
 
@@ -5,8 +6,13 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'e-Crohn Home',
-    home: HomeRoute(),
+    // home: HomeRoute(),
+    initialRoute: '/',
     // theme: themeData,
+    routes: {
+      '/': (context) => HomeRoute(),
+      '/about': (context) => AboutScreen(),
+    },
   ));
 }
 
@@ -17,7 +23,7 @@ final themeData = ThemeData(
   accentColor: Colors.cyan[600],
 
   // Define the default font family.
-  fontFamily: 'Roboto',
+  fontFamily: 'Helvetica Neue',
 
   // Define the default TextTheme. Use this to specify the default
   // text styling for headlines, titles, bodies of text, and more.

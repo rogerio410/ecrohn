@@ -87,7 +87,9 @@ class RedFlagScoreState extends State<RedFlagScore> {
                         padding: const EdgeInsets.only(left: 16.0),
                         child: Text(
                           'Compute Score',
-                          style: TextStyle(fontSize: 20.0),
+                          style: TextStyle(
+                            fontSize: 18.0,
+                          ),
                         ),
                       ),
                     ],
