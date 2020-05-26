@@ -35,14 +35,16 @@ class RedFlagScoreState extends State<RedFlagScore> {
                                 WeightLossDialog(),
                           ).then((percentual) {
                             final p = percentual.toStringAsFixed(1);
+                            var _msg = "Weight lost: $p%";
                             if (percentual < 5) {
+                              _msg = "Weight lost ($p%) less then 5%";
                               setState(() {
                                 question.checked = false;
                               });
                             }
-                            final _msg = "Weight lost: $p %";
+
                             final _snack = SnackBar(
-                              duration: Duration(seconds: 10),
+                              duration: Duration(seconds: 6),
                               content: Text(_msg),
                               action:
                                   SnackBarAction(label: "Ok", onPressed: () {}),
@@ -219,6 +221,8 @@ class WeightLossDialog extends StatefulWidget {
 class _WeightLossDialogState extends State<WeightLossDialog> {
   final startWeightController = TextEditingController();
   final endWeightController = TextEditingController();
+  bool _startWValid = true;
+  bool _endWValid = true;
 
   @override
   void dispose() {
@@ -241,14 +245,19 @@ class _WeightLossDialogState extends State<WeightLossDialog> {
           controller: startWeightController,
           keyboardType: TextInputType.number,
           decoration: InputDecoration(
-              labelText: 'Starting weight (3 months ago)', hintText: 'eg. 80'),
+              labelText: 'Starting weight (3 months ago)',
+              hintText: 'eg. 80',
+              errorText: _startWValid ? null : 'Required'),
         ),
         TextField(
           autofocus: true,
           controller: endWeightController,
           keyboardType: TextInputType.number,
-          decoration:
-              InputDecoration(labelText: 'Current weight', hintText: 'eg. 70'),
+          decoration: InputDecoration(
+            labelText: 'Current weight',
+            hintText: 'eg. 70',
+            errorText: _endWValid ? null : 'Required',
+          ),
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -264,10 +273,22 @@ class _WeightLossDialogState extends State<WeightLossDialog> {
             ),
             RaisedButton(
               onPressed: () {
-                var startW = double.parse(startWeightController.text);
-                var endW = double.parse(endWeightController.text);
-                final lostPercent = (startW - endW) / startW;
-                Navigator.of(context).pop(lostPercent * 100);
+                setState(() {
+                  startWeightController.text.isEmpty
+                      ? _startWValid = false
+                      : _startWValid = true;
+
+                  endWeightController.text.isEmpty
+                      ? _endWValid = false
+                      : _endWValid = true;
+
+                  if (_startWValid && _endWValid) {
+                    var startW = double.parse(startWeightController.text);
+                    var endW = double.parse(endWeightController.text);
+                    final lostPercent = (startW - endW) / startW;
+                    Navigator.of(context).pop(lostPercent * 100);
+                  }
+                });
               },
               child: Text('Ok'),
             ),
