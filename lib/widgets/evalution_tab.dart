@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:ecronh/models/question.dart';
 
-class RedFlagScore extends StatefulWidget {
-  RedFlagScore({Key key}) : super(key: key);
+class EvalutionRedFlagScore extends StatefulWidget {
+  EvalutionRedFlagScore({Key key}) : super(key: key);
 
   @override
-  RedFlagScoreState createState() => RedFlagScoreState();
+  EvalutionRedFlagScoreState createState() => EvalutionRedFlagScoreState();
 }
 
-class RedFlagScoreState extends State<RedFlagScore> {
+class EvalutionRedFlagScoreState extends State<EvalutionRedFlagScore> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -300,62 +301,3 @@ class _WeightLossDialogState extends State<WeightLossDialog> {
     );
   }
 }
-
-class Question {
-  Question({this.order = 0, this.title, this.weight, this.checked = false});
-
-  final title;
-  final weight;
-  final order;
-  bool checked;
-
-  static double score(List<Question> questions) {
-    var value = 0.0;
-
-    questions.forEach((question) {
-      if (question.checked) {
-        value += question.weight;
-      }
-    });
-
-    return value;
-  }
-}
-
-List<Question> questions = <Question>[
-  Question(
-    title:
-        'Non-healing or complex perianal fistula or abscess or perianal lesions (apart from haemorrhoids)',
-    weight: 5,
-  ),
-  Question(
-    title: 'First-degree relative with confirmed inflammatory bowel disease',
-    weight: 4,
-  ),
-  Question(
-    order: 3,
-    title: 'Weight loss (5% of usual body weight) in the last 3 months',
-    weight: 3,
-  ),
-  Question(
-    title: 'Chronic abdominal pain (>3 months)',
-    weight: 3,
-  ),
-  Question(
-    title: 'Nocturnal diarrhoea',
-    weight: 3,
-  ),
-  Question(
-    title: 'Mild fever in the last 3 months',
-    weight: 2,
-  ),
-  Question(
-    title:
-        'No abdominal pain 30–45min after meals, predominantly after vegetables',
-    weight: 2,
-  ),
-  Question(
-    title: 'No rectal urgency',
-    weight: 2,
-  ),
-];

@@ -1,4 +1,3 @@
-import 'package:ecronh/routes/about.dart';
 import 'package:flutter/material.dart';
 import 'package:ecronh/routes/home.dart';
 
@@ -11,7 +10,7 @@ void main() {
     // theme: themeData,
     routes: {
       '/': (context) => HomeRoute(),
-      '/about': (context) => AboutScreen(),
+      // '/about': (context) => AboutScreen(),
     },
   ));
 }

@@ -1,5 +1,7 @@
+import 'package:ecronh/widgets/red_flag_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:ecronh/widgets/tabs_content.dart';
+import 'package:ecronh/widgets/evalution_tab.dart';
+import 'package:ecronh/widgets/about.dart';
 
 class HomeRoute extends StatelessWidget {
   @override
@@ -15,20 +17,20 @@ class HomeRoute extends StatelessWidget {
         ),
         textAlign: TextAlign.left,
       ),
-      actions: <Widget>[
-        IconButton(
-          padding: EdgeInsets.only(
-            right: 12,
-          ),
-          icon: Icon(
-            Icons.info_outline,
-            size: 28,
-          ),
-          onPressed: () {
-            Navigator.pushNamed(context, '/about');
-          },
-        )
-      ],
+      // actions: <Widget>[
+      //   IconButton(
+      //     padding: EdgeInsets.only(
+      //       right: 12,
+      //     ),
+      //     icon: Icon(
+      //       Icons.info_outline,
+      //       size: 28,
+      //     ),
+      //     onPressed: () {
+      //       Navigator.pushNamed(context, '/about');
+      //     },
+      //   )
+      // ],
       bottom: TabBar(
         // unselectedLabelColor: Colors.white,
         // labelColor: Colors.cyanAccent,
@@ -48,13 +50,14 @@ class HomeRoute extends StatelessWidget {
     final body = TabBarView(
       children: <Widget>[
         Icon(Icons.hourglass_empty),
-        Icon(Icons.hourglass_full),
-        RedFlagScore(),
+        RedFlags(),
+        EvalutionRedFlagScore(),
+        AboutScreen(),
       ],
     );
 
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         appBar: appBar,
         body: body,
@@ -79,4 +82,5 @@ const List<Choice> choices = const <Choice>[
   const Choice(title: 'Presentation', icon: Icons.book),
   const Choice(title: 'Red Flags', icon: Icons.flag),
   const Choice(title: 'Evaluation', icon: Icons.find_in_page),
+  const Choice(title: 'About', icon: Icons.info_outline),
 ];
