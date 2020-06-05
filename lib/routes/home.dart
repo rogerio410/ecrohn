@@ -34,7 +34,10 @@ class HomeRoute extends StatelessWidget {
       bottom: TabBar(
         // unselectedLabelColor: Colors.white,
         // labelColor: Colors.cyanAccent,
-        isScrollable: false,
+        isScrollable: true,
+        labelStyle: TextStyle(
+            // fontSize: 11,
+            ),
         tabs: choices.map((Choice choice) {
           return Tab(
             text: choice.title,
