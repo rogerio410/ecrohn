@@ -25,7 +25,7 @@ class _PresetantionFadeTabState extends State<PresetantionFadeTab>
     width: double.infinity,
     height: double.infinity,
     child: Image.asset(
-      'assets/images/t1.jpg',
+      'assets/images/t0.jpg',
       fit: BoxFit.fill,
     ),
   );
@@ -55,7 +55,7 @@ class _PresetantionFadeTabState extends State<PresetantionFadeTab>
             child: Column(
               children: <Widget>[
                 SizedBox(
-                  height: 60,
+                  height: 45,
                 ),
                 Container(
                   padding: EdgeInsets.all(10),
