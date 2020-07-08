@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:ecronh/models/question.dart';
 
-class EvalutionRedFlagScore extends StatefulWidget {
-  EvalutionRedFlagScore({Key key}) : super(key: key);
+class EvaluationRedFlagScore extends StatefulWidget {
+  EvaluationRedFlagScore({Key key}) : super(key: key);
 
   @override
-  EvalutionRedFlagScoreState createState() => EvalutionRedFlagScoreState();
+  EvaluationRedFlagScoreState createState() => EvaluationRedFlagScoreState();
 }
 
-class EvalutionRedFlagScoreState extends State<EvalutionRedFlagScore> {
+class EvaluationRedFlagScoreState extends State<EvaluationRedFlagScore> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

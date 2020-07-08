@@ -1,6 +1,7 @@
+import 'package:ecronh/widgets/presentation_tab.dart';
 import 'package:ecronh/widgets/red_flag_tab.dart';
 import 'package:flutter/material.dart';
-import 'package:ecronh/widgets/evalution_tab.dart';
+import 'package:ecronh/widgets/evaluation_tab.dart';
 import 'package:ecronh/widgets/about.dart';
 
 class HomeRoute extends StatelessWidget {
@@ -52,9 +53,10 @@ class HomeRoute extends StatelessWidget {
 
     final body = TabBarView(
       children: <Widget>[
-        Icon(Icons.hourglass_empty),
+        PresetantionFadeTab(),
+        // PresentationVideoTab(),
         RedFlags(),
-        EvalutionRedFlagScore(),
+        EvaluationRedFlagScore(),
         AboutScreen(),
       ],
     );
