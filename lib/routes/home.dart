@@ -53,7 +53,8 @@ class HomeRoute extends StatelessWidget {
 
     final body = TabBarView(
       children: <Widget>[
-        PresetantionFadeTab(),
+        PresetantionAnimatedTab(),
+        // PresetantionFadeTab(),
         // PresentationVideoTab(),
         RedFlags(),
         EvaluationRedFlagScore(),

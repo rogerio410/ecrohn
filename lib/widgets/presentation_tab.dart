@@ -207,3 +207,34 @@ class _PresentationVideoTabState extends State<PresentationVideoTab> {
     );
   }
 }
+
+class PresetantionAnimatedTab extends StatefulWidget {
+  PresetantionAnimatedTab({Key key}) : super(key: key);
+
+  @override
+  _PresetantionAnimatedTabState createState() =>
+      _PresetantionAnimatedTabState();
+}
+
+class _PresetantionAnimatedTabState extends State<PresetantionAnimatedTab> {
+  bool first = true;
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedSwitcher(
+      duration: Duration(milliseconds: 1500),
+      child: InkWell(
+        key: ValueKey(first),
+        child: Image.asset(
+          first ? 'assets/images/t0.jpg' : 'assets/images/t15.jpg',
+          fit: BoxFit.cover,
+        ),
+        onTap: () {
+          setState(() {
+            first = !first;
+          });
+        },
+      ),
+    );
+  }
+}
