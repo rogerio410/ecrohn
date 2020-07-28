@@ -221,19 +221,23 @@ class _PresetantionAnimatedTabState extends State<PresetantionAnimatedTab> {
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedSwitcher(
-      duration: Duration(milliseconds: 1500),
-      child: InkWell(
-        key: ValueKey(first),
-        child: Image.asset(
-          first ? 'assets/images/t0.jpg' : 'assets/images/t15.jpg',
-          fit: BoxFit.cover,
+    return Container(
+      height: double.infinity,
+      color: Colors.blue[100],
+      child: AnimatedSwitcher(
+        duration: Duration(milliseconds: 1200),
+        child: InkWell(
+          key: ValueKey(first),
+          child: Image.asset(
+            first ? 'assets/images/t0.jpg' : 'assets/images/t15.jpg',
+            fit: BoxFit.cover,
+          ),
+          onTap: () {
+            setState(() {
+              first = !first;
+            });
+          },
         ),
-        onTap: () {
-          setState(() {
-            first = !first;
-          });
-        },
       ),
     );
   }
