@@ -221,6 +221,7 @@ class _PresetantionAnimatedTabState extends State<PresetantionAnimatedTab> {
 
   Widget imageInfo(first) {
     var stack = Stack(
+      fit: StackFit.expand,
       children: <Widget>[
         Image.asset(
           'assets/images/i0.png',
@@ -257,7 +258,7 @@ class _PresetantionAnimatedTabState extends State<PresetantionAnimatedTab> {
                   ),
                 ),
                 SizedBox(
-                  height: 40,
+                  height: 25,
                 ),
               ],
             ),
