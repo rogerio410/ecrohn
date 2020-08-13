@@ -4,7 +4,7 @@ import 'package:ecronh/routes/home.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: 'e-Crohn Home',
+    title: 'e-Crohn',
     // home: HomeRoute(),
     initialRoute: '/',
     // theme: themeData,

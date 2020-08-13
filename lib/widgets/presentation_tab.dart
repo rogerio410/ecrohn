@@ -223,13 +223,20 @@ class _PresetantionAnimatedTabState extends State<PresetantionAnimatedTab> {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
+      width: double.infinity,
       color: Colors.blue[100],
       child: AnimatedSwitcher(
-        duration: Duration(milliseconds: 1200),
+        // transitionBuilder: (Widget child, Animation<double> animation) {
+        //   return ScaleTransition(
+        //     child: child,
+        //     scale: animation,
+        //   );
+        // },
+        duration: Duration(milliseconds: 1300),
         child: InkWell(
           key: ValueKey(first),
           child: Image.asset(
-            first ? 'assets/images/t0.jpg' : 'assets/images/t15.jpg',
+            first ? 'assets/images/i0.png' : 'assets/images/i6.png',
             fit: BoxFit.cover,
           ),
           onTap: () {
