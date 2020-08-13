@@ -219,6 +219,63 @@ class PresetantionAnimatedTab extends StatefulWidget {
 class _PresetantionAnimatedTabState extends State<PresetantionAnimatedTab> {
   bool first = true;
 
+  Widget imageInfo(first) {
+    var stack = Stack(
+      children: <Widget>[
+        Image.asset(
+          'assets/images/i0.png',
+          fit: BoxFit.cover,
+        ),
+        Container(
+          width: double.infinity,
+          height: double.infinity,
+          child: Center(
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: Container(
+                      // color: Colors.red,
+                      ),
+                ),
+                Container(
+                  padding: EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blueGrey.withOpacity(0.45),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    'Tap for more information',
+                    textAlign: TextAlign.left,
+                    style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontFamily: 'Roboto',
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    );
+
+    if (first) {
+      return stack;
+    } else {
+      return Image.asset(
+        'assets/images/i6.png',
+        fit: BoxFit.cover,
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -235,10 +292,7 @@ class _PresetantionAnimatedTabState extends State<PresetantionAnimatedTab> {
         duration: Duration(milliseconds: 1300),
         child: InkWell(
           key: ValueKey(first),
-          child: Image.asset(
-            first ? 'assets/images/i0.png' : 'assets/images/i6.png',
-            fit: BoxFit.cover,
-          ),
+          child: imageInfo(first),
           onTap: () {
             setState(() {
               first = !first;

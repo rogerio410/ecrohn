@@ -200,7 +200,7 @@ class _ScoreResultBottomSheetState extends State<ScoreResultBottomSheet> {
                 height: 24.0,
               ),
               Text(
-                'Tap do close',
+                'Tap to close',
                 style: TextStyle(
                   color: Colors.white,
                   fontStyle: FontStyle.italic,
