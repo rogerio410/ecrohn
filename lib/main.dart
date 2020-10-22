@@ -5,12 +5,9 @@ void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'e-Crohn',
-    // home: HomeRoute(),
     initialRoute: '/',
-    // theme: themeData,
     routes: {
       '/': (context) => HomeRoute(),
-      // '/about': (context) => AboutScreen(),
     },
   ));
 }

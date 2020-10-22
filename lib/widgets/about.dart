@@ -7,8 +7,8 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     var _teameStyle = TextStyle(
       color: Colors.white,
-      fontSize: 16,
-      fontWeight: FontWeight.w700,
+      fontSize: 18,
+      fontWeight: FontWeight.w400,
     );
     return Container(
       padding: EdgeInsets.all(10),
@@ -51,12 +51,15 @@ class AboutScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
+                    SizedBox(
+                      height: 12,
+                    ),
                     Text(
                       'Researcher',
                       style: _teameStyle,
                     ),
                     Text(
-                      'Thaline Elias',
+                      'Thaline Alves Elias Veloso',
                       style: _teameStyle,
                     ),
                   ],
@@ -68,11 +71,11 @@ class AboutScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Text(
-                      '.....',
+                      'Advisor   ',
                       style: _teameStyle,
                     ),
                     Text(
-                      '...',
+                      'Fabrício Ibiapina Tapety',
                       style: _teameStyle,
                     ),
                   ],
@@ -80,19 +83,6 @@ class AboutScreen extends StatelessWidget {
                 SizedBox(
                   height: 12,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Text(
-                      '.....',
-                      style: _teameStyle,
-                    ),
-                    Text(
-                      '...',
-                      style: _teameStyle,
-                    ),
-                  ],
-                )
               ],
             ),
           ),
@@ -101,7 +91,7 @@ class AboutScreen extends StatelessWidget {
           ),
           Image.asset(
             'assets/images/novafapi.png',
-            height: 40,
+            height: 64,
           ),
           SizedBox(
             height: 16,
